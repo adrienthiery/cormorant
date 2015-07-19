@@ -61,7 +61,7 @@
               return ( <img key={index} src={result} className='image' /> )
            }) );
         } else {
-          image = ( <img src={props.image} class='image' /> );
+          image = ( <img src={props.image} className='image' /> );
         }
       }
       var relatedTo;
@@ -216,7 +216,7 @@ ContactPoint.'></div> );
            })}
            </ul>) );
         } else {
-          worksFor = ( <p>Works for: { props.worksFor } </p> );
+          worksFor = ( <div><p>Works for: {props.worksFor}</p></div> );
         }
       }
       var taxID;
@@ -409,7 +409,7 @@ Brand.'></div> );
            }) );
          familyName.push( ( <div key='footer' data-advice='HTML for the *footer* of the section'></div> ) );
         } else {
-          familyName = ( <div class='familyName'>Last Name: {props.familyName}</div> );
+          familyName = ( <div className='familyName'>Last Name: {props.familyName}</div> );
         }
       }
       var award;
@@ -546,7 +546,7 @@ Brand.'></div> );
            }) );
          name.push( ( <div key='footer' data-advice='HTML for the *footer* of the section'></div> ) );
         } else {
-          name = ( <div class='name'>Name :{props.name}</div> );
+          name = ( <div className='name'>Name :{props.name}</div> );
         }
       }
       var naics;
@@ -581,7 +581,7 @@ Brand.'></div> );
            }) );
          gender.push( ( <div key='footer' data-advice='HTML for the *footer* of the section'></div> ) );
         } else {
-          gender = ( <div class='gender'>Gender: {props.gender}</div> );
+          gender = ( <div className='gender'>Gender: {props.gender}</div> );
         }
       }
       var vatID;
@@ -641,7 +641,7 @@ QuantitativeValue.'></div> );
            }) );
          givenName.push( ( <div key='footer' data-advice='HTML for the *footer* of the section'></div> ) );
         } else {
-          givenName = ( <div class='givenName'>Given name: {props.givenName}</div> );
+          givenName = ( <div className='givenName'>Given name: {props.givenName}</div> );
         }
       }
       var alumniOf;
