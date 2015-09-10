@@ -214,7 +214,7 @@ ContactPoint.'></div> );
            })}
            </ul>) );
         } else {
-          worksFor = ( <div><p>Works for: {props.worksFor}</p></div> );
+          worksFor = ( <div><p>Works for:</p><Organization props={props.worksFor} /></div> );
         }
       }
       var taxID;

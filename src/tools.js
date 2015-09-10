@@ -35,14 +35,16 @@
         'portraitImageUrl': 'image',
         'companyName': 'name',
         'companyUrl': 'url',
-        'linkedInPublicUrl': 'url'
+        'linkedInPublicUrl': 'url',
+        'twitterPersonalScreenName' : 'url'
       }
       var newObj = {};
       newObj['@type'] = type;
       newObj['@context'] = 'http://schema.org';
       keys = Object.keys(json);
       for( var index in keys ){
-        if( mappingJSONld[ keys[index] ] != undefined ){
+        key = keys[index]
+        if( mappingJSONld[ key ] != undefined ){
           if('companyName' === key || 'companyUrl' === key){
             if(!newObj.worksFor) {
               newObj.worksFor = {};
@@ -50,11 +52,13 @@
             newObj.worksFor['@type'] = 'Organization';
             newObj.worksFor['@context'] = "http://schema.org/";
             newObj.worksFor[ mappingJSONld[key] ] = json[ key ];
+          } else if('twitterPersonalScreenName' === key) {
+            newObj[ mappingJSONld[ key ] ] = 'http://www.twitter.com/' + json[ key ];
           } else {
-            newObj[ mappingJSONld[ keys[index] ] ] = json[ keys[index] ];
+            newObj[ mappingJSONld[ key ] ] = json[ key ];
           }
         } else {
-          newObj[ keys[index] ] = json[ keys[index] ];
+          newObj[ key ] = json[ key ];
         }
       }
       return newObj;

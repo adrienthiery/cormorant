@@ -214,7 +214,7 @@
            })
            )) );
         } else {
-          worksFor = ( React.createElement("div", null, React.createElement("p", null, "Works for: ", props.worksFor)) );
+          worksFor = ( React.createElement("div", null, React.createElement("p", null, "Works for:"), React.createElement(Organization, {props: props.worksFor})) );
         }
       }
       var taxID;
